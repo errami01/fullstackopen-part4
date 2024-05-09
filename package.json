@@ -7,5 +7,8 @@
   },
   "author": "Abdellatif ERRAMI",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
