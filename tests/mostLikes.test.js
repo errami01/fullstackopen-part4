@@ -1,8 +1,8 @@
 const {test, describe} = require('node:test')
 const assert = require('node:assert')
-const mostBlogs = require('../utils/list_helper').mostBlogs
+const mostLikes = require('../utils/list_helper').mostLikes
 
-describe('most blogs', ()=>{
+describe('moste likes', ()=>{
     const oneBlog = [
         {
             _id: "5a422a851b54a676234d17f7",
@@ -51,17 +51,17 @@ describe('most blogs', ()=>{
           title: "TDD harms architecture",
           author: "Robert C. Martin",
           url: "http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html",
-          likes: 0,
+          likes: 7,
           __v: 0
         }
       ]
     test('one blog', ()=>{
-        const result = mostBlogs(oneBlog)
-        assert.deepEqual(result , {author: "Michael Chan", blogs: 1})
+        const result = mostLikes(oneBlog)
+        assert.deepEqual(result , {author: "Michael Chan", likes: 7})
     })
     test('two most blogs authors', ()=>{
-        const result = mostBlogs(sixBlogs)
-        assert.deepEqual(result , {author: "Edsger W. Dijkstra", blogs: 2})
+        const result = mostLikes(sixBlogs)
+        assert.deepEqual(result , {author: "Edsger W. Dijkstra", likes: 17})
     })
     
 })
