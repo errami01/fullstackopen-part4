@@ -26,6 +26,10 @@ describe('blog api tests', ()=>{
         const response = await api.get('/api/blogs')
         assert.strictEqual(response.body.length, helper.initialBlogs.length)
     })
+    test("the unique identifier property of the blog posts is named id", async ()=>{
+        const noteInDB = await helper.blogsInDb()
+        assert.notEqual(noteInDB[0].id, undefined)
+    })
 })
 after(async () => {
     await mongoose.connection.close()
