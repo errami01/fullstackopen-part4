@@ -14,11 +14,12 @@ const initialBlogs = [
       likes: 5,
     }
 ]
-const blogsInDb = async () => {
-    const notes = await Blog.find({})
-    return notes.map(note => note.toJSON())
-  }
+const blogsInDB = async()=>{
+    const blogs = await Blog.find({})
+    return blogs.map(blog=> blog.toJSON())
+}
+
 module.exports = {
     initialBlogs,
-    blogsInDb
+    blogsInDB
 }

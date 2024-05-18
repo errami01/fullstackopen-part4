@@ -27,8 +27,24 @@ describe('blog api tests', ()=>{
         assert.strictEqual(response.body.length, helper.initialBlogs.length)
     })
     test("the unique identifier property of the blog posts is named id", async ()=>{
-        const noteInDB = await helper.blogsInDb()
-        assert.notEqual(noteInDB[0].id, undefined)
+        const blogsInDB = await helper.blogsInDB()
+        assert.notEqual(blogsInDB[0].id, undefined)
+    })
+    test('A blog can be added', async()=>{
+        const newBlog = {
+            title: 'Portfolio',
+            author: 'Abdellatif',
+            url: 'https://www.erramidev.xyz',
+            likes: 130
+        }
+        await api
+            .post('/api/blogs')
+            .send(newBlog)
+            .expect(201)
+            .expect('Content-Type', /application\/json/)
+        
+        const blogsAtEnd = await helper.blogsInDB()
+        assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length+1)
     })
 })
 after(async () => {
