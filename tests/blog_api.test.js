@@ -46,6 +46,17 @@ describe('blog api tests', ()=>{
         const blogsAtEnd = await helper.blogsInDB()
         assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length+1)
     })
+    test('likes property will default to 0 if missing', async ()=>{
+        const blogWithoutLikes = {
+            title: 'Portfolio',
+            author: 'Abdellatif',
+            url: 'https://www.erramidev.xyz',
+        }
+        const response = await api
+            .post('/api/blogs')
+            .send(blogWithoutLikes)
+        assert.strictEqual(response.body.likes, 0)
+    })
 })
 after(async () => {
     await mongoose.connection.close()
