@@ -57,6 +57,33 @@ describe('blog api tests', ()=>{
             .send(blogWithoutLikes)
         assert.strictEqual(response.body.likes, 0)
     })
+    test('blog without title is not added', async ()=>{
+        const newBlog= {
+            author: 'Abdellatif',
+            url: 'https://www.erramidev.xyz',
+            likes: 50
+        }
+        await api
+            .post('/api/blogs')
+            .send(newBlog)
+            .expect(400)
+        
+        const blogsAtEnd = await helper.blogsInDB()
+        assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length)
+    })
+    test('blog without url is not added', async ()=>{
+        const newBlog= {
+            title: 'Portfolio',
+            author: 'Abdellatif',
+            likes: 50
+        }
+        await api
+            .post('/api/blogs')
+            .send(newBlog)
+            .expect(400)
+        const blogsAtEnd = await helper.blogsInDB()
+        assert.strictEqual(blogsAtEnd.length, helper.initialBlogs.length)
+    })
 })
 after(async () => {
     await mongoose.connection.close()
