@@ -12,13 +12,12 @@ const blog = new Blog({
   ...request.body,
   likes: request.body.likes || 0
 })
-try{
   const result = await blog.save()
   response.status(201).json(result)
-}
-catch(exception){
-  next(exception)
-}
-})
 
+})
+blogsRouter.delete('/:id', async(request, response)=>{
+  await Blog.findByIdAndDelete(request.params.id)
+  response.status(204).end()
+})
 module.exports = blogsRouter
