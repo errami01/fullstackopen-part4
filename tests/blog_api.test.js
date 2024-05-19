@@ -93,6 +93,20 @@ describe('blog api tests', ()=>{
         const blogsAtEnd = await helper.blogsInDB()
         assert.strictEqual(blogsAtEnd.length,  blogsAtStart.length-1)
     })
+    test('updating likes', async()=>{
+        const blogsInDB = await helper.blogsInDB()
+        const blogAtStart = {
+            ...blogsInDB[0],
+            likes: 100
+        }
+        const response = await api
+            .put(`/api/blogs/${blogAtStart.id}`)
+            .send(blogAtStart)
+            .expect(200)
+
+        const blogAtEnd = await Blog.findById(blogAtStart.id)
+        assert.strictEqual(blogAtEnd.likes, 100)
+    })
 })
 after(async () => {
     await mongoose.connection.close()
