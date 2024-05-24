@@ -25,6 +25,10 @@ mongoose.connect(url)
         type: String,
         required: true
     },
+    blogs:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Blog'
+    } ]
 })
 
 userSchema.set('toJSON', {

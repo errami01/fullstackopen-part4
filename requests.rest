@@ -5,11 +5,15 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title": "Demo",
+    "title": "Demo3",
     "author": "Abdellatif",
     "url": "toto.com",
-    "likes": "15"
+    "likes": "15",
+    "userId": "664e3dd0eba81453dd491925"
 }
+
+###
+GET http://localhost:3003/api/users/
 
 ###
 POST http://localhost:3003/api/users
