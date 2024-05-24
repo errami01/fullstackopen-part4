@@ -17,10 +17,14 @@ mongoose.connect(url)
     username: {
         type: String,
         required: true,
-        unique: true // this ensures the uniqueness of username
+        unique: true, // this ensures the uniqueness of username
+        minlength: 3
       },
     name: String,
-    passwordHash: String,
+    passwordHash: {
+        type: String,
+        required: true
+    },
 })
 
 userSchema.set('toJSON', {

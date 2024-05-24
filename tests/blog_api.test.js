@@ -15,6 +15,7 @@ beforeEach(async () => {
     const promiseArray = blogObjects.map(blog => blog.save())
     await Promise.all(promiseArray)
   })
+
 describe('blog api tests', ()=>{
     test('blogs are returned as json', async()=>{
         await api
