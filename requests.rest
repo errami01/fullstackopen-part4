@@ -21,5 +21,15 @@ Content-Type: application/json
 
 {
     "username": "sal",
-    "name": "nki"
+    "name": "nki",
+    "password": "123qwe"
 }
+
+###
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+    "username": "sal",
+    "password": "123qwe"
+} 
