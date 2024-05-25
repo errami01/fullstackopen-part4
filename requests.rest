@@ -3,16 +3,16 @@ GET http://localhost:3003/api/blogs/
 ###
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhZGEiLCJpZCI6IjY2NTFjYTQ0MTk4NTkwMDM0OWNhYjU3NyIsImlhdCI6MTcxNjYzNjI2OX0.PoVBo3gDRgFIHvbLz9ku9h9JZBu809kb8l5OWJG5jW4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhZGEiLCJpZCI6IjY2NTFjYTQ0MTk4NTkwMDM0OWNhYjU3NyIsImlhdCI6MTcxNjY2OTI5N30.XNxFNkbjqui3gcf0Pg6E0wNEuyJH1UYZBZHs9-SufVo
 
 {
-    "title": "dadaDemo5",
+    "title": "dadaDemo7",
     "author": "Abdellatif",
     "url": "toto.com",
     "likes": "1"
 }
 ###
-DELETE http://localhost:3003/api/blogs/6651ca9d1985900349cab57b
+DELETE http://localhost:3003/api/blogs/6650cc5997e408887328a855
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhZGEiLCJpZCI6IjY2NTFjYTQ0MTk4NTkwMDM0OWNhYjU3NyIsImlhdCI6MTcxNjYzNjI2OX0.PoVBo3gDRgFIHvbLz9ku9h9JZBu809kb8l5OWJG5jW4
 
 ###
