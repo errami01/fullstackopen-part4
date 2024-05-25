@@ -3,13 +3,13 @@ GET http://localhost:3003/api/blogs/
 ###
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbCIsImlkIjoiNjY1MGUzNjU1NTdiNjI2OGRlMmZjMzk4IiwiaWF0IjoxNzE2NjMxMTUxfQ.Cxwu9Q71_hkqZuR2ScGBgBOiZJ9zW0DEG2mh097BFI0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhZGEiLCJpZCI6IjY2NTFjYTQ0MTk4NTkwMDM0OWNhYjU3NyIsImlhdCI6MTcxNjYzNjI2OX0.PoVBo3gDRgFIHvbLz9ku9h9JZBu809kb8l5OWJG5jW4
 
 {
-    "title": "Demo4",
+    "title": "dadaDemo5",
     "author": "Abdellatif",
     "url": "toto.com",
-    "likes": "15"
+    "likes": "1"
 }
 
 ###
@@ -20,7 +20,7 @@ POST http://localhost:3003/api/users
 Content-Type: application/json
 
 {
-    "username": "sal",
+    "username": "dada",
     "name": "nki",
     "password": "123qwe"
 }
@@ -30,6 +30,6 @@ POST http://localhost:3003/api/login
 Content-Type: application/json
 
 {
-    "username": "sal",
+    "username": "dada",
     "password": "123qwe"
 } 
